@@ -10,6 +10,14 @@ namespace basic_graph_implementation.Algorithms
 {
     public static class BreadthFirstSearch
     {
+        /// <summary>
+        /// Function to perform a Breadth First Search on a graph starting from a given node.
+        /// </summary>
+        /// <param name="graph"> The graph to search. </param>
+        /// <param name="startNode"> The node to start the search from. </param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns> Returns a list of node identifiers in the order they were visited. </returns>
+        /// <exception cref="Exception"> Thrown when the start node does not exist in the graph. </exception>
         public static List<string> BreadthFirstSearchStart<T>(UndirectedGraph<T> graph, T startNode) where T : IGraphNode
         {
             if (!graph.ContainsNode(startNode))
