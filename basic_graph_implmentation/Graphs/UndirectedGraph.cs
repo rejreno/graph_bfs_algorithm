@@ -73,6 +73,20 @@ namespace basic_graph_implementation.Graphs
             }
         }
 
+        public bool ContainsNode(T node)
+        {
+            return graph.ContainsKey(node.Identificator);
+        }
+
+        public List<T> GetNeighbors(T node)
+        {
+            if (graph.ContainsKey(node.Identificator))
+            {
+                return graph[node.Identificator];
+            }
+            return new List<T>();
+        }
+
         private bool IsNodeExist(T node1, T node2)
         {
             return graph.ContainsKey(node1.Identificator) && graph.ContainsKey(node2.Identificator);
