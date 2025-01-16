@@ -8,6 +8,6 @@ namespace basic_graph_implementation.Interfaces
 {
     public interface IGraphNode
     {
-        public string Identificator {  get; set; }
+        public string Identificator { get; set; }
     }
 }
