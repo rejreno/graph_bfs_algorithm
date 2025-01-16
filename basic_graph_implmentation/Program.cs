@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 using basic_graph_implementation.Algorithms;
 using basic_graph_implementation.Graphs;
 using basic_graph_implementation.NodeTypes;
@@ -56,7 +57,7 @@ class Program
         // Show the graph structure
         Console.WriteLine("Graph Structure:");
         graph.ShowGraph();
-        
+
         // Execute BFS only if the feature flag is enabled
         if (featureFlags["EnableBFS"])
         {
