@@ -1,0 +1,33 @@
+name: .NET Build and Test
+
+on:
+  push: # Trigger workflow on every push to any branch
+    branches:
+      - '**'
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up .NET 8.0 SDK
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      # Step 3: Restore dependencies for the solution
+      - name: Restore dependencies
+        run: dotnet restore basic_graph_implementation.sln
+
+      # Step 4: Build the solution
+      - name: Build solution
+        run: dotnet build basic_graph_implementation.sln --configuration Release --no-restore
+
+      # Step 5: Run tests
+      - name: Run tests
+        run: dotnet test basic_graph_implementation.sln --no-build --verbosity normal
