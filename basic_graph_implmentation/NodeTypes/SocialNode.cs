@@ -9,9 +9,9 @@ namespace basic_graph_implementation.NodeTypes
 {
     public class SocialNode : IGraphNode
     {
-        public string Identificator { get; set;}
+        public string Identificator { get; set; }
 
-        public SocialNode(string Identificator) 
+        public SocialNode(string Identificator)
         {
             this.Identificator = Identificator;
         }

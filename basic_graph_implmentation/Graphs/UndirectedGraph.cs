@@ -22,7 +22,7 @@ namespace basic_graph_implementation.Graphs
             {
                 throw new Exception("This node is already exists!");
             }
-     
+
             graph[node.Identificator] = new List<T>();
         }
 
@@ -47,7 +47,7 @@ namespace basic_graph_implementation.Graphs
             graph[node2.Identificator].Add(node1);
         }
 
-        public void RemoveNode(T node) 
+        public void RemoveNode(T node)
         {
             foreach (var edges in graph)
             {
