@@ -21,10 +21,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore basic_graph_implmentation/basic_graph_implmentation.sln
+        run: dotnet restore basic_graph_implmentation
 
       - name: Build solution
-        run: dotnet build basic_graph_implmentation/basic_graph_implmentation.sln --configuration Release --no-restore
+        run: dotnet build basic_graph_implmentation --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test basic_graph_implmentation/basic_graph_implmentation.sln --no-build --verbosity normal
+        run: dotnet test basic_graph_implmentation --no-build --verbosity normal
