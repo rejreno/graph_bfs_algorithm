@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace basic_graph_implementation.Graphs
 {
-    public class UndirectedGraph<T> where T : IGraphNode
+    public class UndirectedGraph<T> : IGraph<T> where T : IGraphNode
     {
         private Dictionary<string, List<T>> graph;
 

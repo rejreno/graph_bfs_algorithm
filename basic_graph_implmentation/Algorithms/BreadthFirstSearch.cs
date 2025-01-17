@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace basic_graph_implementation.Algorithms
 {
-    public static class BreadthFirstSearch
+    public class BreadthFirstSearch<T> : IGraphAlgorithm<T>  where T : IGraphNode
     {
         /// <summary>
         /// Function to perform a Breadth First Search on a graph starting from a given node.
@@ -18,7 +18,12 @@ namespace basic_graph_implementation.Algorithms
         /// <typeparam name="T"></typeparam>
         /// <returns> Returns a list of node identifiers in the order they were visited. </returns>
         /// <exception cref="Exception"> Thrown when the start node does not exist in the graph. </exception>
-        public static List<string> BreadthFirstSearchStart<T>(UndirectedGraph<T> graph, T startNode) where T : IGraphNode
+        /// 
+        private static readonly BreadthFirstSearch<T> _instance = new BreadthFirstSearch<T>();
+
+        public static BreadthFirstSearch<T> Instance => _instance;
+
+        public List<string> Execute(IGraph<T> graph, T startNode) 
         {
             if (!graph.ContainsNode(startNode))
             {
