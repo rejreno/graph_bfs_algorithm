@@ -61,10 +61,10 @@ class Program
         // Execute BFS only if the feature flag is enabled
         if (featureFlags["EnableBFS"])
         {
-            var bfsResult = BreadthFirstSearch.BreadthFirstSearchStart(graph, alice);
+            var result = new AlgorithmsStrategy<SocialNode>().Run(BreadthFirstSearch<SocialNode>.Instance, graph, alice);
 
             Console.WriteLine("BFS Result:");
-            foreach (var nodeId in bfsResult)
+            foreach (var nodeId in result)
             {
                 Console.WriteLine(nodeId);
             }
