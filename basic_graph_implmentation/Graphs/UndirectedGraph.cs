@@ -1,4 +1,5 @@
-﻿using basic_graph_implementation.Interfaces;
+﻿using basic_graph_implementation.Exceptions;
+using basic_graph_implementation.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace basic_graph_implementation.Graphs
         {
             if (this.IsNodeAlreadyExist(node))
             {
-                throw new Exception("This node is already exists!");
+                throw new InvalidOperationException(GraphExceptions.NodeAlreadyExist);
             }
 
             graph[node.Identificator] = new List<T>();
@@ -30,17 +31,17 @@ namespace basic_graph_implementation.Graphs
         {
             if (!this.IsNodeExist(node1, node2))
             {
-                throw new Exception("Nodes dont exist!");
+                throw new InvalidOperationException(GraphExceptions.NodesDoNotExist);
             }
 
             if (this.AreNodesTheSame(node1, node2))
             {
-                throw new Exception("Nodes are the same!");
+                throw new InvalidOperationException(GraphExceptions.NodesAreTheSame);
             }
 
             if (this.IsEdgeDuplicated(node1, node2))
             {
-                throw new Exception("Edges are duplicated!");
+                throw new InvalidOperationException(GraphExceptions.EdgesAreDuplicated);
             }
 
             graph[node1.Identificator].Add(node2);
