@@ -1,3 +1,6 @@
 # basic_graph_implmentation
 
-Feature flag inside Program.cs ;)
+Authors:
+* Rafał Juraś
+* Krzysiek Kokot
+* Wojtek Brol
